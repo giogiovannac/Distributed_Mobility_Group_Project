@@ -6,7 +6,6 @@ import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.distributedmobilitygroupproject.network.SpotifyID
-import com.example.distributedmobilitygroupproject.network.SpotifyIDApiService
 import com.example.distributedmobilitygroupproject.overview.ImageGridAdapter
 import com.example.distributedmobilitygroupproject.overview.SpotifyApiStatus
 

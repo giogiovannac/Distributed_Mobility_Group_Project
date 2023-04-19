@@ -6,14 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.example.distributedmobilitygroupproject.R
 
 class OverviewFragment : Fragment() {
 
-    //private val viewModel: OverviewViewModel by viewModels()
+    private val viewModel: OverviewViewModel by viewModels()
 
 
-    /*override fun onCreateView(
+    override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
@@ -26,8 +27,9 @@ class OverviewFragment : Fragment() {
         binding.viewModel = viewModel
 
         // Sets the adapter of the photosGrid RecyclerView
-        binding.photosGrid.adapter = PhotoGridAdapter()*/
+        binding.photosGrid.adapter = ImageGridAdapter()
 
 
-
+        return binding.root
     }
+}

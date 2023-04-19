@@ -8,7 +8,16 @@ import com.squareup.moshi.Json
  * created by davidromero
  * on 2023-04-19
  **/
-data class SpotifyID (
+
+/*
+data class SpotifyID ( //TODO: add later
     val id: String,
     @Json(name = "id") val artistID: String
+
+)*/
+
+data class SpotifyImage (
+    val id: String,
+    @Json(name = "img_src") val imgSrcUrl: String
+
 )

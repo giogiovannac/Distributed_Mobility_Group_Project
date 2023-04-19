@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.distributedmobilitygroupproject.network.SpotifyID
+import com.example.distributedmobilitygroupproject.network.SpotifyImage
 
 /**
  * Student ID: 991555778
@@ -15,17 +16,17 @@ import com.example.distributedmobilitygroupproject.network.SpotifyID
  **/
 class ImageGridAdapter {
     class PhotoGridAdapter :
-        ListAdapter<SpotifyID,ImageGridAdapter.SpotifyIDViewHolder>(DiffCallback) {
+        ListAdapter<SpotifyImage,ImageGridAdapter.SpotifyImageViewHolder>(DiffCallback) {
 
         /**
          * The MarsPhotosViewHolder constructor takes the binding variable from the associated
          * GridViewItem, which nicely gives it access to the full [MarsPhoto] information.
          */
-        class MarsPhotosViewHolder(
+        class SpotifyImageViewHolder(
             private var binding: GridViewItemBinding
         ) : RecyclerView.ViewHolder(binding.root) {
-            fun bind(marsPhoto: MarsPhoto) {
-                binding.photo = marsPhoto
+            fun bind(spotifyImage: SpotifyImage) {
+                binding.image = spotifyImage
                 // This is important, because it forces the data binding to execute immediately,
                 // which allows the RecyclerView to make the correct view size measurements
                 binding.executePendingBindings()

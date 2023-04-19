@@ -5,7 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.distributedmobilitygroupproject.network.SpotifyApi
-import com.example.distributedmobilitygroupproject.network.SpotifyID
+import com.example.distributedmobilitygroupproject.network.SpotifyImage
+//import com.example.distributedmobilitygroupproject.network.SpotifyID
 import kotlinx.coroutines.launch
 
 enum class SpotifyApiStatus { LOADING, ERROR, DONE }
@@ -19,10 +20,11 @@ class OverviewViewModel : ViewModel() {
 
     // Internally, we use a MutableLiveData, because we will be updating the List of MarsPhoto
     // with new values
-    private val _ids = MutableLiveData<List<SpotifyID>>()
+    //private val _ids = MutableLiveData<List<SpotifyID>>() //TODO
+    private val _images = MutableLiveData<List<SpotifyImage>>()
 
     // The external LiveData interface to the property is immutable, so only this class can modify
-    val ids: LiveData<List<SpotifyID>> = _ids
+    val ids: LiveData<List<SpotifyImage>> = _images
 
 
     init {
@@ -38,11 +40,11 @@ class OverviewViewModel : ViewModel() {
         viewModelScope.launch {
             _status.value = SpotifyApiStatus.LOADING
             try {
-                _ids.value = SpotifyApi.retrofitService.getArtistID()
+                _images.value = SpotifyApi.retrofitService.getImages()
                 _status.value = SpotifyApiStatus.DONE
             } catch (e: Exception) {
                 _status.value = SpotifyApiStatus.ERROR
-                _ids.value = listOf()
+                _images.value = listOf()
             }
         }
     }
