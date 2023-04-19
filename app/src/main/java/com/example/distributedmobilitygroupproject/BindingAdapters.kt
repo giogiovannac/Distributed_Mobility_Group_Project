@@ -5,7 +5,8 @@ import android.widget.ImageView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.distributedmobilitygroupproject.network.SpotifyID
+import com.example.distributedmobilitygroupproject.network.SpotifyImage
+//import com.example.distributedmobilitygroupproject.network.SpotifyImage
 import com.example.distributedmobilitygroupproject.overview.ImageGridAdapter
 import com.example.distributedmobilitygroupproject.overview.SpotifyApiStatus
 
@@ -20,7 +21,7 @@ import com.example.distributedmobilitygroupproject.overview.SpotifyApiStatus
  * Updates the data shown in the [RecyclerView].
  */
 @BindingAdapter("listData")
-fun bindRecyclerView(recyclerView: RecyclerView, data: List<SpotifyID>?) {
+fun bindRecyclerView(recyclerView: RecyclerView, data: List<SpotifyImage>?) {
     val adapter = recyclerView.adapter as ImageGridAdapter
     adapter.submitList(data)
 }
