@@ -24,23 +24,23 @@ class OverviewViewModel : ViewModel() {
     private val _images = MutableLiveData<List<SpotifyImage>>()
 
     // The external LiveData interface to the property is immutable, so only this class can modify
-    val ids: LiveData<List<SpotifyImage>> = _images
+    val images: LiveData<List<SpotifyImage>> = _images
 
 
     init {
-        getSpotifyIDs()
+        getSpotifyImages()
     }
 
     /**
      * Gets Mars photos information from the Mars API Retrofit service and updates the
      * [MarsPhoto] [List] [LiveData].
      */
-    private fun getSpotifyIDs() {
+    private fun getSpotifyImages() {
 
         viewModelScope.launch {
             _status.value = SpotifyApiStatus.LOADING
             try {
-                _images.value = SpotifyApi.retrofitService.getImages()
+                _images.value = SpotifyApi.retrofitService.getSpotifyImages()
                 _status.value = SpotifyApiStatus.DONE
             } catch (e: Exception) {
                 _status.value = SpotifyApiStatus.ERROR

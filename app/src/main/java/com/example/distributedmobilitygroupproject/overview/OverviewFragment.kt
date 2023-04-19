@@ -1,17 +1,15 @@
 package com.example.distributedmobilitygroupproject.overview
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
-import com.example.distributedmobilitygroupproject.R
+import androidx.fragment.app.Fragment
+import com.example.distributedmobilitygroupproject.databinding.FragmentOverviewBinding
 
 class OverviewFragment : Fragment() {
 
-    private val viewModel: OverviewViewModel by viewModels()
+    private val viewModel: OverviewViewModel by ()
 
 
     override fun onCreateView(
@@ -27,8 +25,7 @@ class OverviewFragment : Fragment() {
         binding.viewModel = viewModel
 
         // Sets the adapter of the photosGrid RecyclerView
-        binding.photosGrid.adapter = ImageGridAdapter()
-
+        binding.imagesGrid.adapter = ImageGridAdapter()
 
         return binding.root
     }

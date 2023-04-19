@@ -38,10 +38,8 @@ interface SpotifyApiService { //Fetch artist spoitfy ID given string name
         "X-RapidAPI-Key: 8388516373msh1227ac17fbff7f3p1069c8jsna28adae39e46",
         "X-RapidAPI-Host: spotify23.p.rapidapi.com"
     )
-
-
     @GET("photos")
-    suspend fun getImages(): List<SpotifyImage>
+    suspend fun getSpotifyImages(): List<SpotifyImage>
 
     /*@GET("/artists/images")
     fun getArtistID(): List<SpotifyID>*/ //TODO: Add later

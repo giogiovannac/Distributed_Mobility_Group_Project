@@ -1,12 +1,12 @@
 package com.example.distributedmobilitygroupproject
 
+import coil.load
 import android.view.View
 import android.widget.ImageView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.distributedmobilitygroupproject.network.SpotifyImage
-//import com.example.distributedmobilitygroupproject.network.SpotifyImage
 import com.example.distributedmobilitygroupproject.overview.ImageGridAdapter
 import com.example.distributedmobilitygroupproject.overview.SpotifyApiStatus
 

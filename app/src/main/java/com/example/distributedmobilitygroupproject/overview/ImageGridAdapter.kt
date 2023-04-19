@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.distributedmobilitygroupproject.network.SpotifyID
+import com.example.distributedmobilitygroupproject.databinding.GridViewItemBinding
 import com.example.distributedmobilitygroupproject.network.SpotifyImage
 
 /**
@@ -15,8 +15,8 @@ import com.example.distributedmobilitygroupproject.network.SpotifyImage
  * on 2023-04-19
  **/
 class ImageGridAdapter {
-    class PhotoGridAdapter :
-        ListAdapter<SpotifyImage,ImageGridAdapter.SpotifyImageViewHolder>(DiffCallback) {
+    class ImageGridAdapter :
+        ListAdapter<SpotifyImage, ImageGridAdapter.SpotifyImageViewHolder>(DiffCallback) {
 
         /**
          * The MarsPhotosViewHolder constructor takes the binding variable from the associated
@@ -37,12 +37,12 @@ class ImageGridAdapter {
          * Allows the RecyclerView to determine which items have changed when the [List] of
          * [MarsPhoto] has been updated.
          */
-        companion object DiffCallback : DiffUtil.ItemCallback<MarsPhoto>() {
-            override fun areItemsTheSame(oldItem: MarsPhoto, newItem: MarsPhoto): Boolean {
+        companion object DiffCallback : DiffUtil.ItemCallback<SpotifyImage>() {
+            override fun areItemsTheSame(oldItem: SpotifyImage, newItem: SpotifyImage): Boolean {
                 return oldItem.id == newItem.id
             }
 
-            override fun areContentsTheSame(oldItem: MarsPhoto, newItem: MarsPhoto): Boolean {
+            override fun areContentsTheSame(oldItem: SpotifyImage, newItem: SpotifyImage): Boolean {
                 return oldItem.imgSrcUrl == newItem.imgSrcUrl
             }
         }
@@ -53,8 +53,8 @@ class ImageGridAdapter {
         override fun onCreateViewHolder(
             parent: ViewGroup,
             viewType: Int
-        ): MarsPhotosViewHolder {
-            return MarsPhotosViewHolder(
+        ): SpotifyImagesViewHolder {
+            return SpotifyImagesViewHolder(
                 GridViewItemBinding.inflate(LayoutInflater.from(parent.context))
             )
         }
@@ -62,9 +62,9 @@ class ImageGridAdapter {
         /**
          * Replaces the contents of a view (invoked by the layout manager)
          */
-        override fun onBindViewHolder(holder: MarsPhotosViewHolder, position: Int) {
-            val marsPhoto = getItem(position)
-            holder.bind(marsPhoto)
+        override fun onBindViewHolder(holder: SpotifyImagesViewHolder, position: Int) {
+            val spotifyImage = getItem(position)
+            holder.bind(spotifyImage)
         }
     }
 }
