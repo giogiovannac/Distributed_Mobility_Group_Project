@@ -19,7 +19,7 @@ import retrofit2.http.Headers
  **/
 
 
-private const val BASE_URL = "https://spotify23.p.rapidapi.com/artists/?ids=2w9zwq3AktTeYYMuhMjju8"
+private val BASE_URL = "https://spotify23.p.rapidapi.com/artists/?ids=2w9zwq3AktTeYYMuhMjju8"
 private const val RAPIDAPI_KEY = "8388516373msh1227ac17fbff7f3p1069c8jsna28adae39e46"
 private const val RAPIDAPI_HOST = "spotify23.p.rapidapi.com"
 
