@@ -10,23 +10,24 @@ import com.example.distributedmobilitygroupproject.R
 
 class OverviewFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = OverviewFragment()
-    }
+    //private val viewModel: OverviewViewModel by viewModels()
 
-    private lateinit var viewModel: OverviewViewModel
 
-    override fun onCreateView(
+    /*override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_overview, container, false)
-    }
+        val binding = FragmentOverviewBinding.inflate(inflater)
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(OverviewViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
+        // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
+        binding.lifecycleOwner = this
 
-}
+        // Giving the binding access to the OverviewViewModel
+        binding.viewModel = viewModel
+
+        // Sets the adapter of the photosGrid RecyclerView
+        binding.photosGrid.adapter = PhotoGridAdapter()*/
+
+
+
+    }

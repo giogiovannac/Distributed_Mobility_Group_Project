@@ -25,7 +25,7 @@ private val retrofit = Retrofit.Builder()
 
 interface SpotifyIDApiService { //Fetch artist spoitfy ID given string name
     @GET("artist")
-    fun getArtistID()
+    fun getArtistID(): List<SpotifyID>
 }
 
 object SpotifyApi {
