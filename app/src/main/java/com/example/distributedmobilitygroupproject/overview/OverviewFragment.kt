@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.distributedmobilitygroupproject.databinding.FragmentOverviewBinding
+import kotlin.properties.Delegates
 
 class OverviewFragment : Fragment() {
 
-    private val viewModel: OverviewViewModel by ()
+    private val viewModel: OverviewViewModel by viewModels()
 
 
     override fun onCreateView(
