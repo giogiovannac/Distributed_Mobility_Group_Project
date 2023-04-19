@@ -23,7 +23,11 @@ private val retrofit = Retrofit.Builder()
     .baseUrl(BASE_URL)
     .build()
 
-interface SpotifyApiService { //Fetch artist spoitfy ID given string name
+interface SpotifyIDApiService { //Fetch artist spoitfy ID given string name
     @GET("artist")
     fun getArtistID()
+}
+
+object SpotifyApi {
+    val retrofitService: SpotifyIDApiService by lazy { retrofit.create(SpotifyIDApiService::class.java) }
 }
